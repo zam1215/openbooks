@@ -1,9 +1,11 @@
 package com.example.openbooks
 
 import android.content.Context
+import android.media.Image
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
@@ -15,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.openbooks.ui.theme.鍾愛美Theme
 
@@ -26,7 +29,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
 
                 Surface(modifier = Modifier.fillMaxSize(),  color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    Greeting("鍾愛美")
 
                 }
             }
@@ -36,9 +39,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.Start) {
-        Text(text = "Hello $name!")
-
+    Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(text = "作者：海青班數媒 $name")
+        Image(
+            painterResource(id = R.drawable.map),
+            contentDescription ="map")
     }
 }
 
@@ -47,6 +52,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     鍾愛美Theme {
-        Greeting("Android")
+        Greeting("鍾愛美")
     }
 }
